@@ -20,8 +20,10 @@ class Calculator:
             return str(value)
     
         elif "," in value:
-            num1 , num2 = value.split(',')
-            sum = int(num1) + int(num2)
+            listofnumbers = value.split(',')
+            sum = 0
+            for number in listofnumbers:
+                sum = sum + int(number)
             return sum
         else:
             return ""

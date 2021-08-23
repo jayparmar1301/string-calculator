@@ -22,5 +22,11 @@ class CalculatorTestCase(unittest.TestCase):
         ExpectedValue = 3
         self.assertEqual(ActualValue,ExpectedValue)
 
+    def test_should_return_sum_of_multiple_number_driven_by_comma(self):
+        ClassInstance = calci()
+        ActualValue = ClassInstance.add('1,2,3,4')
+        ExpectedValue = 10
+        self.assertEqual(ActualValue,ExpectedValue)
+
 if __name__ == '__main__':
     unittest.main()
