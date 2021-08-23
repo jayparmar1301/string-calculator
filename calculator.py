@@ -4,7 +4,7 @@
 # roll - 20MCEC07
 # role - Developer
 ##########################################################################################
-
+import re
 
 class Calculator:
 
@@ -19,8 +19,8 @@ class Calculator:
         elif len(str(value)) == self.StandardForSingleString:
             return str(value)
     
-        elif "," in value:
-            listofnumbers = value.split(',')
+        elif "," or "\n" in value:
+            listofnumbers = re.split("\n|,",value)
             sum = 0
             for number in listofnumbers:
                 sum = sum + int(number)

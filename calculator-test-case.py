@@ -28,5 +28,11 @@ class CalculatorTestCase(unittest.TestCase):
         ExpectedValue = 10
         self.assertEqual(ActualValue,ExpectedValue)
 
+    def test_should_accept_new_line_same_as_comma(self):
+        ClassInstance = calci()
+        ActualValue = ClassInstance.add('1\n2\n3,4')
+        ExpectedValue = 10
+        self.assertEqual(ActualValue,ExpectedValue)
+
 if __name__ == '__main__':
     unittest.main()
