@@ -115,5 +115,17 @@ class CalculatorTestCase(unittest.TestCase):
         ExpectedValue = 2
         self.assertEqual(ActualValue,ExpectedValue)
 
+    def test_should_accept_any_number_of_delimiter_as_valid_input(self):
+        '''
+        This usecase is for accepting any number of delimiter as valid input. Let say you pass '//[***]\n1***2***3' as input value then
+        this function will return '6'.
+        Input value: '//[***]\n1***2***3'
+        output value: '6'
+        '''
+        ClassInstance = calci()
+        ActualValue = ClassInstance.add('//[***]\n1***2***3')
+        ExpectedValue = 6
+        self.assertEqual(ActualValue,ExpectedValue)
+
 if __name__ == '__main__':
     unittest.main()
