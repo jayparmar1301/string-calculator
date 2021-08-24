@@ -103,6 +103,17 @@ class CalculatorTestCase(unittest.TestCase):
         ExpectedValue = 'negatives not allowed -1 -4'
         self.assertEqual(ActualValue,ExpectedValue)
 
+    def test_should_not_add_number_bigger_than_1000(self):
+        '''
+        This usecase will add number if value exceeding than 1000. Let say you pass '2,1001' as input value then
+        this function will return '2'.
+        Input value: '2,1001'
+        output value: '2'
+        '''
+        ClassInstance = calci()
+        ActualValue = ClassInstance.add('2,1001')
+        ExpectedValue = 2
+        self.assertEqual(ActualValue,ExpectedValue)
 
 if __name__ == '__main__':
     unittest.main()

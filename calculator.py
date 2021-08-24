@@ -15,6 +15,7 @@ class Calculator:
         self.StandardZeroType = 0
         self.StandardForSingleString = 1
         self.NegativeExceptionMessage = 'negatives not allowed'
+        self.MaxNumber = 1000
 
     def add(self,value):
         if value == self.StandardZeroType:
@@ -32,7 +33,8 @@ class Calculator:
                 if i.isdigit():
                     if self.raise_error_on_negative_num(i):
                         negative_nums += str(i)
-                    sum = sum + int(i)
+                    if int(i) <= self.MaxNumber:
+                        sum = sum + int(i)
             if negative_nums:
                 return self.NegativeExceptionMessage + ' ' + negative_nums
             return sum
@@ -44,7 +46,8 @@ class Calculator:
             for number in listofnumbers:
                 if self.raise_error_on_negative_num(number):
                     negative_nums += str(number)
-                sum = sum + int(number)
+                if int(number) <= self.MaxNumber:
+                    sum = sum + int(number)
             if negative_nums:
                 return self.NegativeExceptionMessage + ' ' + negative_nums
             return sum
