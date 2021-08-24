@@ -58,11 +58,24 @@ class CalculatorTestCase(unittest.TestCase):
         This usecase will return sums of number provided as input seperated by ','(comma) as well as '\n'(new line). Let say you pass '1\n2\n3,4' as input value then
         this function will return '10' as output value by considering ',' and '\n' as plus operator. 
         Input value: '1\n2\n3,4'
-        output value: '10'
+        output value: 10
         '''
         ClassInstance = calci()
         ActualValue = ClassInstance.add('1\n2\n3,4')
         ExpectedValue = 10
+        self.assertEqual(ActualValue,ExpectedValue)
+
+
+    def test_should_accept_multiple_delimiter(self):
+        '''
+        This usecase will return sums of number provided as input seperated by multiple delimiter. Let say you pass '//;\n2\n3,4' as input value then
+        this function will return 9 as output value by considering ',' and '\n' as plus operator. 
+        Input value: '//;\n2\n3,4'
+        output value: 9
+        '''
+        ClassInstance = calci()
+        ActualValue = ClassInstance.add('//;\n2\n3,4')
+        ExpectedValue = 9
         self.assertEqual(ActualValue,ExpectedValue)
 
 if __name__ == '__main__':
