@@ -1,5 +1,5 @@
 # string-calculator
-This is project is based on '**String Calculator**' where we can perform multiple operation on strings.
+This is project is based on '**String Calculator**' where we are performing multiple operation on strings.
 There are various test-cases written as specified in this link 'https://osherove.com/tdd-kata-1'. All the use cases are covered in our project.
 
 For running the code write below command in terminal where file is located
