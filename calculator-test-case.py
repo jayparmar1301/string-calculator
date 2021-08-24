@@ -88,8 +88,21 @@ class CalculatorTestCase(unittest.TestCase):
         '''
         ClassInstance = calci()
         ActualValue = ClassInstance.add('-1,2,4')
-        ExpectedValue = 'negatives not allowed'
+        ExpectedValue = 'negatives not allowed -1'
         self.assertEqual(ActualValue,ExpectedValue)
-        
+
+    def test_should_raise_exception_on_negative_number_and_also_show_all_negative_number(self):
+        '''
+        This usecase will return exception message if we pass any negative value as input. Let say you pass '-1,\n3,4' as input value then
+        this function will return 'negatives not allowed'. 
+        Input value: '-1,2,4'
+        output value: 'negatives not allowed -1'
+        '''
+        ClassInstance = calci()
+        ActualValue = ClassInstance.add('-1,2, -4')
+        ExpectedValue = 'negatives not allowed -1 -4'
+        self.assertEqual(ActualValue,ExpectedValue)
+
+
 if __name__ == '__main__':
     unittest.main()
