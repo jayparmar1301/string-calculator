@@ -1,4 +1,3 @@
-
 '''
 ##########################################################################################
 name - Jay Parmar
@@ -10,6 +9,11 @@ role - Developer
 import re
 
 class Calculator:
+    '''
+    This is calculator class which implemented as string calculator. We are performing few operations on adding numbers from string
+    by imposing some validation rules. All the test-cases for this class are written in calculator-test-case.py, you can refer this
+    file more having better understanding on usecases.
+    '''
 
     def __init__(self):
         self.StandardZeroType = 0
